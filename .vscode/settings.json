@@ -1,0 +1,7 @@
+{
+    "editor.inlineSuggest.edits.allowCodeShifting": "always",
+    "editor.inlineSuggest.edits.renderSideBySide": "auto",
+    "editor.defaultFormatter": "aaron-bond.better-comments",
+    "C_Cpp.copilotHover": "enabled",
+    "chat.disableAIFeatures": false
+}

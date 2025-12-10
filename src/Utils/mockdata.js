@@ -1,4 +1,4 @@
-const restaurantList = {
+const restList = {
   "restaurants": [
 {
 "info": {
@@ -1227,4 +1227,4 @@ const restaurantList = {
 }
 ]
 }
-export default restaurantList;
+export default restList;

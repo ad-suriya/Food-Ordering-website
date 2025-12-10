@@ -1,71 +1,42 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Rescard from "./Rescard";
-import restlist from "../Utils/mockdata";
-// const restaurantList2 = {
-//   "restaurants": [
-//     {
-//       "info": {
-//         "id": "16227",
-//         "name": "Pizza Hut",
-//         "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2025/9/1/435f6aa7-b0ba-428c-9905-17ce31f32604_16227.JPG",
-//         "locality": "Anna Nagar",
-//         "areaName": "Anna Nagar",
-//         "costForTwo": "₹400 for two",
-//         "cuisines": [
-//           "Pizzas"
-//         ],
-//         "avgRating": 3.2
-//       }
-//     },
-//     {
-//       "info": {
-//         "id": "23741",
-//         "name": "McDonald's",
-//         "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2025/10/3/4062aa93-2a68-44c6-a9b2-58273b6c07c7_23741.JPG",
-//         "locality": "Anna Nagar",
-//         "areaName": "Anna Nagar",
-//         "costForTwo": "₹400 for two",
-//         "cuisines": [
-//           "Burgers",
-//           "Beverages",
-//           "Cafe",
-//           "Desserts"
-//         ],
-//         "avgRating": 4.4
-//       }
-//     }
-//   ]
-// };
-const Body=() => {
-const [restaurantList,setrestaurantlist] = useState(restlist
-);
 
-  return(
-    <div className="body" > 
+const Body = () => {
+  const [restaurantList, setrestaurantlist] = useState([]); // ✅ Fix 1
+  
+  useEffect(() => {
+    fetchData();
+  }, []);
+  
+  const fetchData = async () => {
+    const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.0697174&lng=80.2432839&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+    const json = await data.json();
+    console.log(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
+    setrestaurantlist(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants); // ✅ Fix 2
+  }
+
+  return (
+    <div className="body">
       <div className="Filter">
-          <button
-            className="filter"
-              onClick={() => {
-              const filteredList = restaurantList.restaurants.filter(
-                (res) => res.info.avgRating > 4.5
-              );
-              setrestaurantlist({
-                restaurants:filteredList
-              });
-
-            }}
-
-            >
-            Top Rated Restaurants
-          </button>
-          
+        <button
+          className="filter"
+          onClick={() => {
+            const filteredList = restaurantList.filter( // ✅ Fix 3
+              (res) => res.info.avgRating > 4.0
+            );
+            setrestaurantlist(filteredList); // ✅ Fix 4
+          }}
+        >
+          Top Rated Restaurants
+        </button>
       </div>
       <div className="res-contain">
-        {restaurantList.restaurants.map((restaurant) => (  <Rescard key={restaurant.info.id} resData={restaurant} /> ))} 
+        {restaurantList.map((restaurant) => ( // ✅ Fix 5
+          <Rescard key={restaurant.info.id} resData={restaurant} />
+        ))}
       </div>
-
     </div>
-
-  )
+  );
 };
+
 export default Body;

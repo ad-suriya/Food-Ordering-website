@@ -3,7 +3,6 @@ import { createRoot } from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import Rescard from "./components/Rescard";
-import restaurantList from "./Utils/mockdata"; 
 const AppLayout = () => {
   return (
     <div className="app">

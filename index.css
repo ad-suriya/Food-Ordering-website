@@ -54,3 +54,7 @@ h3, h4, h5 {
     padding: 10px;
     height: 20;
 }
+.Filter{
+    display: flex;
+    flex-wrap: wrap;
+}

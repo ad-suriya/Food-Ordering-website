@@ -29,6 +29,13 @@ const Body = () => {
         >
           Top Rated Restaurants
         </button>
+        <div className="Search">
+        <input 
+          type ="text" 
+          className = "search-box"
+        />
+        <button>Search</button>
+      </div>
       </div>
       <div className="res-contain">
         {restaurantList.map((restaurant) => ( // ✅ Fix 5

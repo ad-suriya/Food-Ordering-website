@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Rescard from "./Rescard";
-
+import Shimmer from "./Shimmer";
 const Body = () => {
   const [restaurantList, setrestaurantlist] = useState([]); // ✅ Fix 1
   
@@ -13,6 +13,9 @@ const Body = () => {
     const json = await data.json();
     console.log(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
     setrestaurantlist(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants); // ✅ Fix 2
+  }
+if (restaurantList.length === 0) {
+    return <Shimmer />;
   }
 
   return (

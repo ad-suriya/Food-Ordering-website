@@ -1,41 +1,57 @@
-🍔 Food Ordering Website
+# 🍔 Food Ordering Website
 
 A responsive Food Ordering Web Application built using React.js.
-This project allows users to browse restaurants, view details, navigate between pages, and experience a modern UI built with reusable React components.
 
-🚀 Features
+This project focuses on clean component architecture, reusable UI elements, and client-side routing to simulate a modern food browsing experience.
 
-🏠 Home Page with restaurant listings
+---
 
-📄 About Page
+## 📖 Overview
 
-📞 Contact Page
+The application allows users to:
 
-❌ Error Page (404 handling)
+- Browse restaurant listings
+- Navigate between multiple pages
+- Experience loading states
+- Interact with a responsive UI built with reusable components
 
-🧭 Reusable Header Component
+All rendering is handled on the client side using React.
 
-🍽️ Restaurant Card Component
+---
 
-⏳ Shimmer Loading UI
+## 🏗 System Architecture
 
-🔄 Client-side routing
+High-Level Flow:
 
-📱 Responsive Design
+User  
+→ React Frontend  
+→ Component Rendering  
+→ React Router Navigation  
+→ Dynamic UI Update  
 
-🛠️ Tech Stack
+The application follows a modular component-based structure.
 
-⚛️ React.js
+---
 
-JavaScript (ES6+)
+## 🛠 Tech Stack
 
-HTML5
+Frontend:
+- React.js  
+- JavaScript (ES6+)  
+- HTML5  
+- CSS3  
+- React Router DOM  
 
-CSS3
+Tooling:
+- npm  
+- ESLint (if configured)
 
-React Router DOM
+---
 
-📂 Project Structure
+## 📂 Project Structure
+
+```
+
 food-ordering-website/
 │
 ├── .gitignore
@@ -44,7 +60,6 @@ food-ordering-website/
 ├── Logo.png
 ├── package.json
 ├── package-lock.json
-├── .vscode/
 │
 ├── src/
 │   ├── App.js
@@ -62,58 +77,81 @@ food-ordering-website/
 │
 └── README.md
 
-⚙️ Installation & Setup
+```
 
-1️⃣ Clone the repository
+---
 
-git clone https://github.com/your-username/food-ordering-website.git
+## 🔑 Core Features
 
+- Home page with restaurant listings  
+- Reusable header navigation  
+- Restaurant card component  
+- Shimmer loading UI  
+- About page  
+- Contact page  
+- 404 error handling  
+- Client-side routing  
+- Responsive design  
 
-2️⃣ Navigate into the project
+---
 
+## ⚙️ Installation & Setup
+
+### 1. Clone the repository
+
+```
+
+git clone [https://github.com/your-username/food-ordering-website.git](https://github.com/your-username/food-ordering-website.git)
 cd food-ordering-website
 
+```
 
-3️⃣ Install dependencies
+### 2. Install dependencies
+
+```
 
 npm install
 
+```
 
-4️⃣ Start the development server
+### 3. Start development server
+
+```
 
 npm start
 
+```
 
-The app will run on:
+Runs on:
 
-http://localhost:3000
+```
 
-📌 Key Components
+[http://localhost:3000](http://localhost:3000)
 
-App.js – Main application with routing setup
+```
 
-Header.js – Navigation bar
+---
 
-Body.js – Displays restaurant list
+## 🚧 Current Status
 
-Rescard.js – Restaurant card UI
+- Frontend-only implementation  
+- Static restaurant data  
+- No backend integration  
+- No authentication or payment system  
 
-Shimmer.js – Loading placeholder
+---
 
-About.js / Contact.js – Static pages
+## 🔮 Future Improvements
 
-Error.js – 404 page handling
+- Backend API integration  
+- Cart and checkout flow  
+- User authentication  
+- Real-time data fetching  
+- Deployment to cloud hosting  
 
-🎯 Learning Objectives
+---
 
-This project was built to practice:
+## 👨‍💻 Author
 
-React component architecture
-
-Props & state management
-
-Conditional rendering
-
-Routing with React Router
-
-Building reusable UI components
+- Suriya
+```
